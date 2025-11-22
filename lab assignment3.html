@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f8f9fc;
+            color: #222;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5vw;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        header nav a:hover {
+            color: #007bff;
+        }
+
+        /* HERO */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5rem 5vw;
+            min-height: 90vh;
+            gap: 3rem;
+        }
+        .hero-text {
+            flex: 1;
+            animation: fadeIn 1.2s ease;
+        }
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            animation: colorChange 4s infinite alternate;
+        }
+        .hero img {
+            width: 45%;
+            border-radius: 1.5rem;
+            object-fit: cover;
+            animation: slideIn 1.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);} 
+            to {opacity: 1; transform: translateY(0);} 
+        }
+        @keyframes slideIn {
+            from {opacity: 0; transform: translateX(40px);} 
+            to {opacity: 1; transform: translateX(0);} 
+        }
+        @keyframes colorChange {
+            0% {color: #007bff;} 
+            100% {color: #ff6b6b;} 
+        }
+
+        /* ABOUT */
+        section {
+            padding: 5rem 5vw;
+        }
+
+        /* SKILLS GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .skill-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        /* CONTACT */
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            max-width: 500px;
+        }
+        form input, form textarea {
+            padding: 1rem;
+            border-radius: 0.8rem;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        button {
+            padding: 1rem;
+            border: none;
+            background: #007bff;
+            color: #fff;
+            font-size: 1.1rem;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background: #0056d6;
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #111;
+            color: #fff;
+            margin-top: 3rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero img {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>My Portfolio</h2>
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="hero">
+    <div class="hero-text">
+        <h1>Hello, I'm Alex</h1>
+        <h2>Full Stack Developer</h2>
+        <p>I design and build websites with modern, responsive UI and smooth interactions.</p>
+    </div>
+    <img src="ai photo.jpeg" alt="Profile" />
+</section>
+
+<section id="about">
+    <h1>About Me</h1>
+    <p>I am a web developer passionate about creating responsive, visually appealing, and user-friendly web applications. I enjoy working with modern technologies and continuously learning new tools.</p>
+</section>
+
+<section id="skills">
+    <h1>My Skills</h1>
+    <div class="skills-grid">
+        <div class="skill-card">HTML</div>
+        <div class="skill-card">CSS / Flexbox / Grid</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">React.js</div>
+        <div class="skill-card">Node.js</div>
+        <div class="skill-card">MongoDB</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h1>Projects</h1>
+    <div class="projects-grid">
+        <div class="project-card">
+            <h2>Project 1</h2>
+            <p>A sample responsive website design.</p>
+        </div>
+        <div class="project-card">
+            <h2>Project 2</h2>
+            <p>Front-end UI built with Flexbox and Grid.</p>
+        </div>
+        <div class="project-card">
+            <h2>Project 3</h2>
+            <p>Interactive application with animations.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h1>Contact Me</h1>
+    <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    © 2025 My Portfolio. All rights reserved.
+</footer>
+
+</body>
+</html>
