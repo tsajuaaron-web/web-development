@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Food App UI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+    }
+
+    header {
+      background: #ff5722;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .search-box {
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      background: #fff;
+    }
+
+    .search-box input {
+      width: 90%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .food-list {
+      padding: 20px;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .food-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .food-card:hover {
+      transform: scale(1.03);
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .food-card .info {
+      padding: 10px;
+    }
+
+    .food-card .info h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .food-card .info p {
+      margin: 8px 0 0;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>Food Delivery App</header>
+
+  <div class="search-box">
+    <input type="text" placeholder="Search food..." />
+  </div>
+
+  <div class="food-list">
+    <div class="food-card">
+      <img src="https://via.placeholder.com/300x150" />
+      <div class="info">
+        <h3>Pizza</h3>
+        <p>Cheesy and delicious!</p>
+      </div>
+    </div>
+
+    <div class="food-card">
+      <img src="https://via.placeholder.com/300x150" />
+      <div class="info">
+        <h3>Burger</h3>
+        <p>Juicy with fresh veggies</p>
+      </div>
+    </div>
+
+    <div class="food-card">
+      <img src="https://via.placeholder.com/300x150" />
+      <div class="info">
+        <h3>Biriyani</h3>
+        <p>Spicy and flavorful</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
